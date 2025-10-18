@@ -9,7 +9,7 @@ encrypts it, and saves it to encrypted_msg.txt.
 If run with the argument "decrypt", it reads the file and decrypts the message.
 The program assumes all characters appear in the table.
 
-Date: 2025 - 10 - 13
+Date: 2025 - 10 - 18
 
 """
 import logging
@@ -56,7 +56,7 @@ def encrypt(message):
     if not message:
         encrypted = ""
     else:
-        nums = [str(encode_table[ch]) for ch in message if ch in encode_table]
+        nums = [str(encode_table[ch]) for ch in message]
         encrypted = ",".join(nums)
     return encrypted
 
@@ -105,6 +105,8 @@ def main():
 if __name__ == "__main__":
     assert encrypt("hello world") == "19,16,33,33,36,98,94,36,39,33,15" , "Encrypt Test Falied"
     assert decrypt("19,16,33,33,36,98,94,36,39,33,15") == "hello world" , "Decryption Test Falied"
+    assert encrypt("") == "", "Encrypt Test Falied"
+
     logger.info("All Assert Test Passed")
 
 main()
