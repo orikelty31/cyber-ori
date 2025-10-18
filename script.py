@@ -19,14 +19,6 @@ import sys
 logging.basicConfig(filename="newfile.log",format='%(asctime)s %(message)s',filemode='w')
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
-""""
-# Test messages
-logger.debug("Harmless debug Message")
-logger.info("Just an information")
-logger.warning("Its a Warning")
-logger.error("Did you try to divide by zero")
-logger.critical("Internet is down")
-"""
 
 encode_table = {
     'A':56,'B':57,'C':58,'D':59,'E':40,'F':41,'G':42,'H':43,'I':44,
